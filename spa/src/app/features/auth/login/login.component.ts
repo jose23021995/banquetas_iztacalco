@@ -49,17 +49,24 @@ export class LoginComponent {
     password: ['admin123', [Validators.required]]
   });
 
-  onLogin() {
-    if (this.loginForm.valid) {
-      this.isLoading.set(true); // Actualizar señal
-      const { username, password } = this.loginForm.value;
-
-      if (username === 'admin' && password === 'admin123') {
-        this.authService.login('fake-jwt-token');
-      } else {
-        alert('Credenciales incorrectas');
+ // ... (tus otros imports)
+onLogin() {
+  if (this.loginForm.valid) {
+    this.isLoading.set(true);
+    
+    this.authService.login(this.loginForm.value).subscribe({
+      next: (res) => {
+        // Si todo sale bien, mandamos al dashboard
+        this.router.navigate(['/dashboard']);
+      },
+      error: (err) => {
+        console.error('Error login:', err);
+        alert('Credenciales no válidas');
         this.isLoading.set(false);
-      }
-    }
+      },
+      complete: () => this.isLoading.set(false)
+    });
   }
+}
+
 }

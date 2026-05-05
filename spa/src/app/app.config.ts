@@ -10,11 +10,12 @@ import { routes } from './app.routes';
 import { errorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
 // No olvides importar el MessageService si lo vas a usar aquí
 import { MessageService } from 'primeng/api';
+import { jwtInterceptor } from './core/interceptors/jwt.interceptor'
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(
-      withInterceptors([errorHandlerInterceptor])
+      withInterceptors([jwtInterceptor,errorHandlerInterceptor])
     ),
     provideRouter(routes),
     provideAnimationsAsync(),

@@ -1,22 +1,26 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-  // Signal privada para el estado del token
-  private _token = signal<string | null>(localStorage.getItem('token'));
+  private http = inject(HttpClient);
+  private router = inject(Router);
+  private apiUrl = 'http://localhost:3000/api/auth'; 
 
-  // Signal computada (pública) para saber si está logueado
+  private _token = signal<string | null>(localStorage.getItem('token'));
   isAuthenticated = computed(() => !!this._token());
 
-  constructor(private router: Router) {}
-
-  login(token: string) {
-    localStorage.setItem('token', token);
-    this._token.set(token);
-    this.router.navigate(['/dashboard']);
+  login(credentials: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, credentials).pipe(
+      tap(res => {
+        // Guardamos el token exacto que mandó tu Backend
+        localStorage.setItem('token', res.token);
+        this._token.set(res.token);
+      })
+    );
   }
 
   logout() {
