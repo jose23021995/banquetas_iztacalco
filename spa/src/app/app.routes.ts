@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 //🛡️ Documentación de auth.guard.ts (Seguridad de Rutas)
 import { authGuard } from './core/guards/auth.guard';
+import { adminGuard } from './core/guards/admin.guard';
 import { DashboardLayoutComponent } from './features/dashboard/dashboard-layout/dashboard-layout.component';
 
 export const routes: Routes = [
@@ -25,6 +26,13 @@ export const routes: Routes = [
         path: 'stats', // Se accede como /dashboard/stats
         loadComponent: () => import('./features/dashboard/children/stats/stats')
           .then(m => m.Stats)
+      },
+      { 
+        path: 'admin', 
+        canActivate: [adminGuard], 
+        // Quita el children y pon el loadComponent directo aquí
+        loadComponent: () => import('./features/admin/admin/admin')
+          .then(m => m.AdminComponent) 
       },
       {
         path: '', 

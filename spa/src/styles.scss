@@ -69,6 +69,11 @@ html, body {
     height: 100%;
 }
 
+// Asegura que el app-root ocupe todo el espacio disponible
+app-character-list,app-stats,app-admin{
+    width: 100% !important;
+}
+
 /* El selector que definimos en app.config.ts para el modo oscuro */
 .my-app-dark {
     background: #121212;
@@ -110,10 +115,7 @@ html, body {
         border-radius: 25px solid !important;
 }
 //tabla
-app-character-list{
-    width: 100% !important;
 
-}
 
 #filtro{
     display: flex !important;
@@ -150,9 +152,6 @@ p-dynamicdialog{
 
 .card-modal .p-card-body{
     padding: .5rem !important;
-}
-app-stats{
-    width: 100% !important;
 }
 
 span.db-label {
