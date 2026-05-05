@@ -1,0 +1,141 @@
+﻿spa/
+├── .editorconfig
+├── .gitignore
+├── .prettierrc
+├── angular.json
+├── estructura.txt
+├── package.json
+├── package-lock.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.spec.json
+│
+├── public/
+│   ├── favicon.ico
+│   └── img/
+│       ├── logo.png
+│       ├── auth/
+│       ├── characters/
+│       ├── dashboard/
+│       └── shared/
+│           ├── esfera.png
+│           ├── esfera_dark.png
+│           │
+│           ├── fondo/
+│           │   ├── diagonal.png
+│           │   ├── dot_gray.png
+│           │   └── detail/
+│           │       ├── dark.jpg
+│           │       ├── ligth.jpg
+│           │       └── ligth.svg
+│           │
+│           ├── footer/
+│           │   └── img_footer.png
+│           │
+│           ├── header/
+│           │   ├── bg_comics_pc.jpg
+│           │   ├── fondo.png
+│           │   └── fondo_dark.png
+│           │
+│           └── person_header_information/
+│               ├── estadisticas.png
+│               ├── estadisticas_l
+│               ├── h2_charactor.png
+│               ├── h2_charactor_dark.png
+│               ├── h3_charactor
+│               ├── h4_charactor
+│               └── header_goku.png
+│
+└── src/
+    ├── index.html
+    ├── main.ts
+    ├── styles.scss
+    │
+    └── app/
+        ├── app.config.ts
+        ├── app.html
+        ├── app.routes.ts
+        ├── app.scss
+        ├── app.spec.ts
+        ├── app.ts
+        │
+        ├── core/
+        │   ├── guards/
+        │   │   └── auth.guard.ts
+        │   │
+        │   ├── interceptors/
+        │   │   └── error-handler.interceptor.ts
+        │   │
+        │   └── services/
+        │       ├── auth.service.ts
+        │       └── character.service.ts
+        │
+        ├── features/
+        │   ├── auth/
+        │   │   └── login/
+        │   │       ├── login.component.html
+        │   │       ├── login.component.scss
+        │   │       ├── login.component.spec.ts
+        │   │       └── login.component.ts
+        │   │
+        │   └── dashboard/
+        │       ├── dashboard-layout/
+        │       │   ├── dashboard-layout.component.html
+        │       │   ├── dashboard-layout.component.scss
+        │       │   ├── dashboard-layout.component.spec.ts
+        │       │   └── dashboard-layout.component.ts
+        │       │
+        │       └── children/
+        │           ├── characters/
+        │           │   ├── character-list/
+        │           │   │   ├── character-list.component.html
+        │           │   │   ├── character-list.component.scss
+        │           │   │   ├── character-list.component.spec.ts
+        │           │   │   └── character-list.component.ts
+        │           │   │
+        │           │   └── components/
+        │           │       ├── character-form/
+        │           │       │   ├── character-form.html
+        │           │       │   ├── character-form.scss
+        │           │       │   ├── character-form.spec.ts
+        │           │       │   └── character-form.ts
+        │           │       │
+        │           │       └── character-table/
+        │           │           ├── character-table.html
+        │           │           ├── character-table.scss
+        │           │           └── character-table.ts
+        │           │
+        │           └── stats/
+        │               ├── stats.html
+        │               ├── stats.scss
+        │               └── stats.ts
+        │
+        └── shared/
+            ├── components/
+            │   ├── character-detail/
+            │   │   ├── character-detail.html
+            │   │   ├── character-detail.scss
+            │   │   └── character-detail.ts
+            │   │
+            │   ├── dark-mode/
+            │   │   ├── dark-mode.component.html
+            │   │   ├── dark-mode.component.scss
+            │   │   ├── dark-mode.component.spec.ts
+            │   │   └── dark-mode.component.ts
+            │   │
+            │   └── headers/
+            │       ├── headers.html
+            │       ├── headers.scss
+            │       ├── headers.spec.ts
+            │       └── headers.ts
+            │
+            ├── interfaces/
+            │   ├── models/
+            │   │   ├── character.model.ts
+            │   │   └── login-text.interface.ts
+            │   │
+            │   └── text/
+            │       └── login-texts.json
+            │
+            └── pipes/

@@ -1,0 +1,17 @@
+{
+  "auth": {
+    "title": "Z-Warriors Admin",
+    "subtitle": "Bienvenido al panel de control",
+    "userLabel": "Usuario",
+    "passLabel": "Contraseña",
+    "buttonText": "Acceder"
+  },
+  "theme-md": {
+    "dark": "🌙 Modo Oscuro",
+    "light": "☀️ Modo Claro"
+  },
+  "theme-sm": {
+    "dark": "🌙",
+    "light": "☀️"
+  }
+}

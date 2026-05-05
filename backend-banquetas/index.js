@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const catalogosRoutes = require('./routes/catalogos.routes');
+const authRoutes = require('./routes/auth.routes');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 
@@ -11,6 +13,7 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/catalogos', catalogosRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
     res.send('Servidor de BANQUETAS_IZTACALCO funcionando 🚀');

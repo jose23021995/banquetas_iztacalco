@@ -1,0 +1,93 @@
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--p-content-background); // Variable de PrimeNG v21
+  transition: background-color 0.3s ease;
+
+  .main-menu {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--p-content-border-color);
+    padding: 0.5rem 1rem;
+  }
+
+  .content-container {
+    flex: 1;
+    padding: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+// Estilo para el texto del logo
+.font-bold {
+  color: var(--p-primary-color);
+}
+
+.align-items-center{
+          img{
+            height: 80px !important;
+          }
+}
+#toolbar {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+.main-menu{
+  background-color: var(--primary-card) !important;
+}
+
+#main-panel{
+  padding: 0px !important;
+  max-width: 100% !important;
+  display: flex !important;
+  background-image: url("/img/shared/fondo/dot_gray.png");
+}
+
+@media screen and (max-width: 400px) {
+  #toolbar {
+    display: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+p-button{
+  background-color: red !important;
+  
+  border-radius: 10px !important;
+  margin-left: 10px;
+  button{
+    span{
+      color: #fff !important;
+    }
+    color: #fff !important;
+  }
+}
+
+.p-button-text.p-button-danger {
+    /* background: transparent; */
+    color: #fff !important;
+}
+
+::ng-deep .btn-salir-header {
+    .p-button {
+        background-color: var(--salir-bg) !important; /* Rojo */
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 8px 16px !important;
+        
+        /* Forzamos el texto y el icono a blanco */
+        color: var(--salir-color) !important;
+
+        .p-button-icon, .p-button-label {
+            color: var(--salir-color) !important;
+        }
+
+        &:hover {
+            background-color: #cc0000 !important; /* Rojo más oscuro al pasar el mouse */
+        }
+    }
+}
