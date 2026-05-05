@@ -1,7 +1,6 @@
 import { Component, OnInit, inject, PLATFORM_ID, signal, computed } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { ChartModule } from 'primeng/chart';
-import { HeadersComponent } from '../../../../shared/components/headers/headers';
 import { CardModule } from 'primeng/card';
 import { CharacterService } from '../../../../core/services/character.service';
 import { Transformation, Detail } from '../../../../shared/interfaces/models/character.model';
@@ -11,7 +10,7 @@ import { CharacterDetailComponent } from '../../../../shared/components/characte
 @Component({
   selector: 'app-stats',
   standalone: true,
-  imports: [CommonModule, ChartModule, HeadersComponent, CardModule, DynamicDialogModule],
+  imports: [CommonModule, ChartModule, CardModule, DynamicDialogModule],
   providers: [DialogService],
   templateUrl: './stats.html',
   styleUrl: './stats.scss',

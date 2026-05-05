@@ -25,8 +25,7 @@ export class DashboardLayoutComponent {
     const role = this.authService.userRole(); // Obtiene 1 o 2
     
     const menu: MenuItem[] = [
-      { label: 'Personajes', icon: 'pi pi-users', routerLink: 'characters' },
-      { label: 'Estadísticas', icon: 'pi pi-chart-bar', routerLink: 'stats' }
+      { label: 'Banquetas', icon: 'pi pi-users', routerLink: 'characters' },
     ];
 
     // 4. Si es Admin (1), agregamos la opción
