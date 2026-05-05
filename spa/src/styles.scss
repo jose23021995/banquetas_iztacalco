@@ -6,13 +6,13 @@
     --text-color: #333333;
     --card-bg: #f8f9fa;
     --primary-color: #007bff;
-    --primary-card: #E9810E;
+    --primary-card: #2BF399;
     --border-buton:#FFF1DA;
     --button-bg: #FF9200;
     --button-text: #AB1C0A;
     --bg-card:#0e2339c5;
     --esfera-button:url("/img/shared/esfera.png") !important;
-    --fondo-login-bg:url("/img/shared/header/fondo.png") !important;
+    --fondo-login-bg:url("/img/shared/banner/banner1.png") !important;
     --fondo-dialog-bg:#15141b !important;
     --difuminado-fondo: linear-gradient(
         rgba(235, 235, 235, 0.5),
@@ -20,7 +20,7 @@
     );
     --difuminado-fondo-panel: linear-gradient(rgb(255 255 255 / 78%), rgb(188 188 188 / 79%)) !important;
     
-    --select-button-bg:#FF9200;
+    --select-button-bg:#2B85F3;
     --select-button:#4A36C2;
     --personajes-icon:url("/img/shared/person_header_information/h2_charactor.png") !important;
     --card-fondo-icon:url("/img/shared/fondo/detail/ligth.svg") !important;
@@ -40,7 +40,7 @@
     --button-text: #fff;
     --bg-card:#4a36c2b0;
     --esfera-button:url("/img/shared/esfera_dark.png") !important;
-    --fondo-login-bg:url("/img/shared/header/fondo_dark.png") !important;
+    --fondo-login-bg:url("/img/shared/banner/banner2.png") !important;
     --fondo-dialog-bg:#15141b !important;
     --difuminado-fondo: linear-gradient(
         rgba(71, 71, 71, 0.5),
@@ -57,6 +57,7 @@
     --card-fondo-icon:url("/img/shared/fondo/detail/dark.jpg") !important;
     --salir-bg:#DC3545;
     --salir-color:#FFFFFF;
+    --banner:url("/img/shared/banner/banner.png") !important;
 }
 // Estilos (styles.scss): Al detectar la clase .my-app-dark, sobrescribe todas las variables de colores e imágenes.
 

@@ -36,7 +36,7 @@ app-stats {
   .header-border {
     width: 100% !important;
     height: 100px;
-    background-image: url("/img/shared/person_header_information/header_goku.png");
+    background-image: var(--banner);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;

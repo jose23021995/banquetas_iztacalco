@@ -33,49 +33,19 @@ app-admin {
     font-size: 2.7rem;
   }
 
-  .charactor {
-    width: 200px;
-    height: 150px;
-    background-image: var(--personajes-icon);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin-right: 130px;
-  }
 }
 
 .card-body {
-  padding: 0% 5%;
+  padding: 0% 2%;
 
   .header-border {
     width: 100% !important;
-    height: 100px;
-    background-image: url("/img/shared/person_header_information/header_goku.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative !important;
-    top: 32px !important;
+    height: 20px;
 
     @media screen and (max-width: 500px) {
       height: 60px;
       top: 24px !important;
     }
-  }
-}
-
-#estadisticas {
-  background-color: #18181b !important;
-  border-radius: 20px;
-  min-height: 800px; // Cambiado a min-height para mejor responsividad
-  width: 100%;
-  padding: 20px;
-  overflow: visible; // Permite que los tooltips del gráfico se vean bien
-  
-  // Asegura que el canvas de Chart.js use todo el espacio
-  ::ng-deep canvas {
-    width: 100% !important;
-    height: 100% !important;
   }
 }
 
@@ -91,10 +61,6 @@ app-admin {
   .title-h2 {
     h2 { font-size: 2rem; }
     .charactor { width: 180px; margin-right: 15px !important; }
-  }
-  #estadisticas {
-    padding: 10px; // Menos espacio en móvil para ganar área de gráfico
-    min-height: 600px; 
   }
 }
 

@@ -35,7 +35,7 @@
 
             width: 100% !important;
             height: 100px; // Altura fija para que la imagen se vea bien
-            background-image: url("/img/shared/person_header_information/header_goku.png");
+            background-image: var(--banner);
             background-size: 100% 100%;    /* Hace que la imagen ocupe exactamente 100% del ancho y alto */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
             background-position: center;  /* La centra en el div */

@@ -1,0 +1,51 @@
+{
+    "banner":
+    [
+        {
+            "title": "MODO ADMINISTRADOR",
+            "image": "/img/shared/banner/admin.png"
+        },
+        {
+            "title": "BANQUETAS IZTACALCO",
+            "image": "/img/shared/banner/admin.png"
+        },
+        {
+            "title": "AGREGAR BANQUETAS",
+            "image": "/img/shared/banner/admin.png"
+        },
+        {
+            "title": "AGREGAR COLORES",
+            "image": "/img/shared/banner/admin.png"
+        },
+        {
+            "title": "AGREGAR COLONIAS",
+            "image": "/img/shared/banner/admin.png"
+        },
+        {
+            "title": "NUEVO REGISTRO",
+            "image": "/img/shared/banner/admin.png"
+        }       
+    ],
+    "MENU":[
+        {
+            "title": "Inicio",
+            "icon": "home",
+            "route": "/admin"
+        },
+        {
+            "title": "Banquetas",
+            "icon": "streetview",
+            "route": "/admin/banquetas"
+        },
+        {
+            "title": "Colores",
+            "icon": "color_lens",
+            "route": "/admin/colores"
+        },
+        {
+            "title": "Colonias",
+            "icon": "location_city",
+            "route": "/admin/colonias"
+        }
+    ]
+}

@@ -7,7 +7,7 @@ app-character-list {
     var(--fondo-login-bg) !important;
   background-size: cover;
   width: 100% !important;
-  height: 150px;
+  height: 100px;
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
@@ -21,17 +21,17 @@ app-character-list {
   }
 
   .charactor {
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 100px;
     /* Ajusta la altura según necesites para que se vea la imagen */
 
-    background-image: var(--personajes-icon);
-    background-repeat: no-repeat;
-    background-position: center;
+    // background-image: var(--personajes-icon);
+    // background-repeat: no-repeat;
+    // background-position: center;
 
-    /* ESTA ES LA CLAVE */
-    background-size: contain;
-    margin-right: 130px;
+    // /* ESTA ES LA CLAVE */
+    // background-size: contain;
+    // margin-right: 130px;
   }
 }
 
