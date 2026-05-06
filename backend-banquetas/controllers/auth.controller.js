@@ -1,5 +1,6 @@
-const jwt = require('jsonwebtoken'); // 1. Importar la librería
+const jwt = require('jsonwebtoken');
 const db = require('../config/db');
+const bcrypt = require('bcrypt'); // 1. Importamos bcrypt
 
 const login = async (req, res) => {
     const { username, password } = req.body;
@@ -13,25 +14,27 @@ const login = async (req, res) => {
 
         const usuario = rows[0];
 
-        if (usuario.password !== password) {
+        // 2. COMPARACIÓN SEGURA
+        // bcrypt.compare recibe (password_del_formulario, password_encriptada_de_la_db)
+        const passwordValida = await bcrypt.compare(password, usuario.password);
+
+        if (!passwordValida) {
             return res.status(401).json({ mensaje: 'Contraseña incorrecta' });
         }
 
-        // 2. Crear el Token
-        // Guardamos el id y el username dentro del token
+        // 3. Crear el Token (Igual que antes)
         const token = jwt.sign(
             { id: usuario.id_usuario, username: usuario.username },
-            'tu_clave_secreta_super_segura', // Esta clave debería ir en el .env
-            { expiresIn: '24h' } // El pase dura 24 horas
+            process.env.JWT_SECRET || 'tu_clave_secreta_super_segura', 
+            { expiresIn: '24h' }
         );
 
         const { password: _, ...datosUsuario } = usuario;
-        
-        // 3. Enviamos el token al cliente
+
         res.json({
             mensaje: 'Bienvenido al sistema',
             usuario: datosUsuario,
-            token: token // <--- Aquí va el pase VIP
+            token: token
         });
 
     } catch (error) {

@@ -1,0 +1,90 @@
+estatus pendiente:
+START TRANSACTION;
+
+-- 1. INSERTAR REGISTRO PRINCIPAL
+INSERT INTO registros (
+    id_usuario,
+    nombre_contacto,
+    apellido_paterno,
+    apellido_materno,
+    direccion_calle_numero,
+    latitud,
+    longitud,
+    id_colonia,
+    id_seccion,
+    id_clave,
+    estatus_banqueta,
+    ancho_banqueta,
+    largo_banqueta,
+    color_fachada_id,
+    material_fachada_id,
+    color_puerta_id,
+    material_puerta_id,
+    estatus
+)
+VALUES (
+    1,
+    'JUAN',
+    'PEREZ',
+    'LOPEZ',
+    'CALLE 123',
+    19.432608,
+    -99.133209,
+    1,
+    11,
+    1,
+    'Normal',
+    1.50,
+    5.00,
+    1,
+    1,
+    2,
+    1,
+    'PENDIENTE'
+);
+
+-- 2. GUARDAR EL ID GENERADO
+SET @id_registro = LAST_INSERT_ID();
+
+-- 3. INSERTAR REFERENCIAS
+INSERT INTO registro_referencias (
+    id_registro,
+    id_referencia,
+    descripcion_detallada
+)
+VALUES
+(@id_registro, 1, 'CERCA DE PARQUE'),
+(@id_registro, 2, 'FRENTE A ESCUELA');
+
+-- 4. INSERTAR IMAGEN ANTES
+INSERT INTO registro_imagenes (
+    id_registro,
+    url_foto,
+    tipo
+)
+VALUES
+(@id_registro, 'imagen_antes_1.jpg', 'ANTES');
+
+COMMIT;
+
+
+
+
+estatus después:
+START TRANSACTION;
+
+-- 1. INSERTAR IMAGEN DESPUES
+INSERT INTO registro_imagenes (
+    id_registro,
+    url_foto,
+    tipo
+)
+VALUES
+(2, 'imagen_despues_1.jpg', 'DESPUES');
+
+-- 2. LIBERAR EL REGISTRO
+UPDATE registros
+SET estatus = 'LIBERADO'
+WHERE id_registro = @id_registro;
+
+COMMIT;
