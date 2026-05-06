@@ -1,28 +1,31 @@
-<div class="flex flex-column align-items-center gap-3 p-4 border-1 surface-border border-round">
-    
-    <!-- Spinner de carga -->
-    <div *ngIf="loading" class="overlay">
-        <p-progressSpinner></p-progressSpinner>
-    </div>
+<div class="flex flex-column align-items-center gap-3 p-4 border-1 surface-border border-round" id="imagen">
+    <h2>Imagen de: {{proposito}}</h2>
+    <!-- Spinner de carga *ngIf="loading" class="overlay"-->
+        <p-progressSpinner *ngIf="loading" class="overlay"></p-progressSpinner>
+        <section class="contenedorImagen" id="contenedorImagen">
+            <!-- Visualizador de Imagen -->
+            <p-image 
+                [src]="imagenVisualizacion" 
+                alt="Imagen Banqueta" 
+                width="150px" 
+                height="150px"
+                [preview]="true">
+            </p-image>
 
-    <!-- Visualizador de Imagen -->
-    <p-image 
-        [src]="imagenVisualizacion" 
-        alt="Imagen Banqueta" 
-        width="250" 
-        [preview]="true">
-    </p-image>
+            <!-- Botón de Subida Estilo PrimeNG -->
+             <div class="boton-accion">
+                <p-fileUpload 
+                    #fileUploadComponent
+                    mode="basic" 
+                    chooseLabel="Seleccionar Imagen" 
+                    chooseIcon="pi pi-upload"
+                    accept="image/*" 
+                    (onSelect)="onFileSelect($event)"
+                    styleClass="p-button-primary">
+                </p-fileUpload>
 
-    <!-- Botón de Subida Estilo PrimeNG -->
-    <p-fileUpload 
-        #fileUploadComponent
-        mode="basic" 
-        chooseLabel="Seleccionar Imagen" 
-        chooseIcon="pi pi-upload"
-        accept="image/*" 
-        (onSelect)="onFileSelect($event)"
-        styleClass="p-button-primary">
-    </p-fileUpload>
+             </div>
+        </section>
 
-    <small class="text-secondary">Propósito: {{proposito}}</small>
+
 </div>

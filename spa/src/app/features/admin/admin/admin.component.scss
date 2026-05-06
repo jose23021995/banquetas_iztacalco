@@ -72,3 +72,9 @@ app-admin {
     .charactor { display: none; }
   }
 }
+
+#imagenes{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

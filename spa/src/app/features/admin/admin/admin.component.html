@@ -5,23 +5,25 @@
         <div class="header-border"></div>
         <div class="mb-4 p-8">
         <p-card>
-            <h1>Modo Admin</h1>
-            <h3>Gestión de usuarios y configuración</h3>
-            <h3>prueba de imagen</h3>
-            <!-- Componente Padre -->
-            <div class="container">
-            <h2>Gestión de Banquetas</h2>
-            
-            <!-- Llamada al componente hijo -->
-            <app-uploaded-image 
-            [nombreDeImagen]="'foto_banqueta_1'" 
-            [idUsuario]="123" 
-            [proposito]="'ANTES'"
-            (onUploadFinished)="manejarRespuestaHijo($event)">
-            </app-uploaded-image>
-
+            <section id="imagenes">
+                <div class="container">            
+                <app-uploaded-image 
+                [nombreDeImagen]="'AGRICOLAORIENTAL'" 
+                [id_registro]="2" 
+                [proposito]="'DESPUES'"
+                (onUploadFinished)="requetsImagen($event)">
+                </app-uploaded-image>
             </div>
-
+            <div class="container">            
+                <app-uploaded-image 
+                [nombreDeImagen]="'AGRICOLAORIENTAL'" 
+                [id_registro]="2" 
+                [proposito]="'ANTES'"
+                (onUploadFinished)="requetsImagen($event)">
+                </app-uploaded-image>
+            </div>
+            </section>
+            
         </p-card>
     </div>
     </section>

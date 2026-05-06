@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter, inject, ViewChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject, ViewChild ,OnInit} from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { FileUploadModule, FileUpload } from 'primeng/fileupload'; // FileUpload es el tipo, FileUploadModule es el módulo
 import { ImageModule } from 'primeng/image';
@@ -18,20 +18,23 @@ import { UploadService } from '../../../core/services/upload.service';
     ProgressSpinnerModule
   ]
 })
-export class UploadedImage {
+export class UploadedImage implements OnInit {
   @ViewChild('fileUploadComponent') fileUpload!: FileUpload;
   
   private uploadService = inject(UploadService);
 
   // Inputs y Outputs
   @Input() nombreDeImagen: string = '';
-  @Input() idUsuario: number = 0;
+  @Input() id_registro: number = 0;
   @Input() proposito: 'ANTES' | 'DESPUES' = 'ANTES';
   @Output() onUploadFinished = new EventEmitter<any>();
 
+  ngOnInit(): void {
+    this.nombreDeImagen = `${this.id_registro}_${this.nombreDeImagen}_${this.proposito}`;
+  }
   // Variables de estado
-  urlPendiente = `${environment.baseUrl}/uploads/banquetas/pendiente.jpg`;
-  urlServidor = `${environment.baseUrl}/uploads/banquetas/antes/`;
+  urlPendiente = `${environment.baseUrl}/uploads/pendiente.jpg`;
+  urlServidor = `${environment.baseUrl}/uploads/banquetas/`;
   imagenVisualizacion: string = this.urlPendiente;
   isBase64: boolean = false;
   loading: boolean = false;
@@ -79,11 +82,12 @@ export class UploadedImage {
 
   subirImagen(file: File) {
     this.loading = true;
-    this.uploadService.subirImagen(file, this.idUsuario, this.proposito, this.nombreDeImagen).subscribe({
+    this.uploadService.subirImagen(file, this.id_registro, this.proposito, this.nombreDeImagen).subscribe({
       next: (res) => {
+        console.log(res);
         this.loading = false;
         this.isBase64 = false;
-        this.imagenVisualizacion = res.urlImagen;
+        this.imagenVisualizacion = res.url_foto;
         
         // Emitimos al padre
         this.onUploadFinished.emit(res);

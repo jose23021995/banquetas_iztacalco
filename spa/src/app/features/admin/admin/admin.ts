@@ -20,12 +20,18 @@ const { banner }=texto;
 })
 export class AdminComponent implements OnInit {
   // Signal para el título dinámico
+  //header
   public bannerBody = signal(<BannerInterface>{});
   public title = signal("");
   public img = signal("");
-  public datosDeLaBanqueta: any;
+  //banner
   
+  //imagenesBanquetas
+  public datosDeLaBanqueta: any;
+
+
   ngOnInit(): void {
+    //banner
     this.bannerBody=signal(banner[0]);
     const {image,title}=this.bannerBody();
     this.title.set(title);
@@ -33,19 +39,9 @@ export class AdminComponent implements OnInit {
   }
   // componente-padre.component.ts
 
-manejarRespuestaHijo(datos: any) {
+requetsImagen(datos: any) {
   console.log('¡Datos recibidos del hijo!', datos);
-  
-  // Aquí ya tienes acceso a:
-  // datos.nombreDeImagen
-  // datos.urlImagen
-  // datos.idUsuario
-
-  // Ejemplo: Guardar en una variable local o enviarlo a un servicio
   this.datosDeLaBanqueta = datos;
-  
-  // Opcional: Mostrar una notificación de éxito con PrimeNG Toast
-  // this.messageService.add({severity:'success', summary:'Subida', detail:'Imagen lista'});
 }
 
   

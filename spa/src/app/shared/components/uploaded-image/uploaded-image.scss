@@ -1,0 +1,27 @@
+#imagen{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#contenedorImagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-accion{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.p-fileupload-basic-content{
+    display: contents !important;
+}

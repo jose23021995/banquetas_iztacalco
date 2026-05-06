@@ -13,7 +13,7 @@ const app = express();
 // --- CONFIGURACIÓN DE MULTER ---
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        const ruta = path.join(__dirname, 'uploads/banquetas/antes');
+        const ruta = path.join(__dirname, 'uploads/banquetas');
         // Crea la carpeta si no existe (importante)
         fs.mkdirSync(ruta, { recursive: true });
         cb(null, ruta);
@@ -43,14 +43,15 @@ app.post('/api/upload-banqueta', upload.single('foto'), (req, res) => {
     }
 
     // Datos adicionales enviados desde Angular
-    const { idUsuario, proposito } = req.body;
+    const { id_registro, proposito } = req.body;
 
     res.send({
-        nombreDeImagen: req.file.filename,
-        urlImagen: `http://localhost:3000/uploads/banquetas/antes/${req.file.filename}`,
-        idUsuario: idUsuario,
-        proposito: proposito,
-        message: 'Archivo guardado correctamente'
+        // nombreDeImagen: req.file.filename,
+        //  message: 'Archivo guardado correctamente'.
+        url_foto: `http://localhost:3000/uploads/banquetas/${req.file.filename}`,
+        id_registro: id_registro,
+        tipo: proposito,
+       
     });
 });
 // --------------------------------
