@@ -15,12 +15,12 @@
 
     <!-- Botón de Subida Estilo PrimeNG -->
     <p-fileUpload 
-        #fileUpload
+        #fileUploadComponent
         mode="basic" 
         chooseLabel="Seleccionar Imagen" 
         chooseIcon="pi pi-upload"
         accept="image/*" 
-        (onSelect)="onFileSelect($event, fileUpload)"
+        (onSelect)="onFileSelect($event)"
         styleClass="p-button-primary">
     </p-fileUpload>
 
