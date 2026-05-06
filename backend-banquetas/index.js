@@ -6,11 +6,11 @@ const authRoutes = require('./routes/auth.routes');
 const jwt = require('jsonwebtoken');
 
 const app = express();
-
+const path = require('path'); // Importante importar path
 // Middlewares
 app.use(cors());
 app.use(express.json());
-
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Rutas
 app.use('/api/catalogos', catalogosRoutes);
 app.use('/api/auth', authRoutes);
