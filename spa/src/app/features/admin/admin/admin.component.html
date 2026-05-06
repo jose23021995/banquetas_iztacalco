@@ -14,11 +14,12 @@
             
             <!-- Llamada al componente hijo -->
             <app-uploaded-image 
-                [nombreDeImagen]="'foto_banqueta_1.jpg'" 
-                [idUsuario]="123" 
-                [proposito]="'ANTES'"
-                (onUploadFinished)="manejarRespuestaHijo($event)">
+            [nombreDeImagen]="'foto_banqueta_1'" 
+            [idUsuario]="123" 
+            [proposito]="'ANTES'"
+            (onUploadFinished)="manejarRespuestaHijo($event)">
             </app-uploaded-image>
+
             </div>
 
         </p-card>
