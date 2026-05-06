@@ -1,0 +1,30 @@
+<div class="flex flex-column align-items-center gap-3 p-4 border-1 surface-border border-round">
+    
+    <!-- Spinner de carga -->
+    <div *ngIf="loading" class="overlay">
+        <p-progressSpinner></p-progressSpinner>
+    </div>
+
+    <!-- Visualizador de Imagen -->
+    <p-image 
+        [src]="imagenVisualizacion" 
+        alt="Imagen Banqueta" 
+        width="250" 
+        [preview]="true">
+    </p-image>
+
+    <!-- Botón de Subida Estilo PrimeNG -->
+    <p-fileUpload 
+        mode="basic" 
+        chooseLabel="Seleccionar Imagen" 
+        chooseIcon="pi pi-upload"
+        name="demo[]" 
+        accept="image/*" 
+        maxFileSize="1000000" 
+        (onSelect)="onFileSelect($event)"
+        [auto]="false"
+        styleClass="p-button-primary">
+    </p-fileUpload>
+
+    <small class="text-secondary">Propósito: {{proposito}}</small>
+</div>

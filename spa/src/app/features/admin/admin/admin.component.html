@@ -7,6 +7,20 @@
         <p-card>
             <h1>Modo Admin</h1>
             <h3>Gestión de usuarios y configuración</h3>
+            <h3>prueba de imagen</h3>
+            <!-- Componente Padre -->
+            <div class="container">
+            <h2>Gestión de Banquetas</h2>
+            
+            <!-- Llamada al componente hijo -->
+            <app-uploaded-image 
+                [nombreDeImagen]="'foto_banqueta_1.jpg'" 
+                [idUsuario]="123" 
+                [proposito]="'ANTES'"
+                (onUploadFinished)="manejarRespuestaHijo($event)">
+            </app-uploaded-image>
+            </div>
+
         </p-card>
     </div>
     </section>
