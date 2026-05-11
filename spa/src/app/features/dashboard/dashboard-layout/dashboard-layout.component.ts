@@ -30,7 +30,63 @@ export class DashboardLayoutComponent {
 
     // 4. Si es Admin (1), agregamos la opción
     if (role === 1) {
-      menu.push({ label: 'Admin', icon: 'pi pi-cog', routerLink: 'admin' });
+      menu.push({
+        label: 'Admin',
+        icon: 'pi pi-cog',
+        // Al agregar 'items', se convierte en un menú desplegable como el de tu imagen
+        items: [
+            {
+                label: 'Imagenes de banquetas',
+                icon: 'pi pi-images',
+                routerLink: ['admin', 1]
+            },
+            {
+                label: 'generacion de excel',
+                icon: 'pi pi-file-excel',
+                routerLink: ['admin', 2]
+            },
+            {
+                label: 'generacion de pdf',
+                icon: 'pi pi-file-pdf',
+                routerLink: ['admin', 3]  
+            },
+            
+            {
+                label: 'geo localizacion de puntos',
+                icon: 'pi pi-map-marker',
+                routerLink: ['admin', 4]
+            },
+            {
+                label: 'Usuarios',
+                icon: 'pi pi-users',
+                routerLink: ['admin', 5]
+            },
+            {
+                label: 'catalogo de colores',
+                icon: 'pi pi-palette',
+                routerLink: ['admin', 6]
+            }
+            ,
+            {
+                label: 'catalogo de colores',
+                icon: 'pi pi-palette',
+                routerLink: ['admin', 7]
+            }
+            ,
+            {
+                label: 'catalogo de fachadas',
+                icon: 'pi pi-palette',
+                routerLink: ['admin', 8]
+            }
+            ,
+            {
+                label: 'catalogo de referencias',
+                icon: 'pi pi-palette',
+                routerLink: ['admin', 9]
+            }
+        ]
+    });
+
     }
 
     menu.push({ 

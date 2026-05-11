@@ -1,0 +1,41 @@
+<div class="card">
+    
+    <p-picklist 
+        [source]="sourceProducts()" 
+        [target]="targetProducts()" 
+        [dragdrop]="true" 
+        [responsive]="true" 
+        filterBy="name" 
+        sourceFilterPlaceholder="Buscar por nombre de item" 
+        targetFilterPlaceholder="Buscar por nombre de item seleccionado" 
+        breakpoint="1400px" 
+        scrollHeight="25rem">
+        
+        <!-- Plantilla para cada elemento de la lista -->
+        <ng-template let-item #item>
+            <div class="flex flex-wrap p-2 items-center gap-3 w-full contyainer-item">
+                <!-- Icono representativo (ya que no tenemos imágenes reales aún) -->
+                <div class="w-12 h-12 flex align-items-center justify-content-center border-round img-container" 
+                [style.background-color]="!item.image ? item.color : null"
+                [class.bg-primary-100]="item.image">
+                    <img src="img/{{ item.category }}/{{ item.image }}" alt="{{ item.category }}" *ngIf="item.image;">
+                </div>
+
+                <div class="flex-1 flex flex-col">
+                    <span class="font-bold text-900">{{ item.name }}</span>
+                    <div class="flex align-items-center gap-2">
+                        <i class="pi pi-tag text-sm text-500"></i>
+                        <span class="text-500 text-sm">{{ item.category }}</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </ng-template>
+    </p-picklist>
+</div>
+
+<!-- Opcional: Resumen de lo seleccionado para pruebas -->
+<div class="mt-4 p-3 bg-gray-50 border-round">
+    <p><strong>Elementos en Destino:</strong> {{ targetProducts().length }}</p>
+</div>

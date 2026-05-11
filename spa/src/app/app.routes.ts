@@ -29,11 +29,19 @@ export const routes: Routes = [
       },
       { 
         path: 'admin', 
-        canActivate: [adminGuard], 
-        // Quita el children y pon el loadComponent directo aquí
-        loadComponent: () => import('./features/admin/admin/admin')
-          .then(m => m.AdminComponent) 
+        canActivate: [adminGuard],
+        children: [
+          { 
+            path: ':id', // Esto atrapa el parámetro 1, 2, 3...
+            loadComponent: () => import('./features/admin/admin/admin').then(m => m.AdminComponent) 
+          },
+          {
+            path: '', // Esto es para cuando entras a /admin sin número
+            loadComponent: () => import('./features/admin/admin/admin').then(m => m.AdminComponent)
+          }
+        ]
       },
+
       {
         path: '', 
         redirectTo: 'characters', 

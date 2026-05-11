@@ -1,30 +1,48 @@
 <div class="admin-container">
-    <!-- Usamos tu componente de Header si lo tienes disponible -->
-    <app-headers [title]="title()" [characterImage]="img()"></app-headers>
-    <section class="card-body">
-        <div class="header-border"></div>
-        <div class="mb-4 p-8">
-        <p-card>
-            <section id="imagenes">
-                <div class="container">            
-                <app-uploaded-image 
-                [nombreDeImagen]="'AGRICOLAORIENTAL'" 
-                [id_registro]="2" 
-                [proposito]="'DESPUES'"
-                (onUploadFinished)="requetsImagen($event)">
-                </app-uploaded-image>
-            </div>
-            <div class="container">            
-                <app-uploaded-image 
-                [nombreDeImagen]="'AGRICOLAORIENTAL'" 
-                [id_registro]="2" 
-                [proposito]="'ANTES'"
-                (onUploadFinished)="requetsImagen($event)">
-                </app-uploaded-image>
-            </div>
-            </section>
-            
-        </p-card>
+  <!-- Usamos tu componente de Header si lo tienes disponible -->
+  <app-headers [title]="title()" [characterImage]="img()"></app-headers>
+  <section class="card-body">
+    <div class="header-border"></div>
+    <div class="mb-4 p-8" [ngSwitch]="id()">
+      <p-card *ngSwitchCase="'1'" header="IMAGENES BANQUETAS">
+        <section id="imagenes">
+          <div class="container">
+            <app-uploaded-image [nombreDeImagen]="'AGRICOLAORIENTAL'" [id_registro]="2" [proposito]="'DESPUES'"
+              (onUploadFinished)="requetsImagen($event)">
+            </app-uploaded-image>
+          </div>
+          <div class="container">
+            <app-uploaded-image [nombreDeImagen]="'AGRICOLAORIENTAL'" [id_registro]="2" [proposito]="'ANTES'"
+              (onUploadFinished)="requetsImagen($event)">
+            </app-uploaded-image>
+          </div>
+        </section>
+
+      </p-card>
+      <p-card *ngSwitchCase="'2'" header="GENERAR EXCEL">
+
+      </p-card>
+      <p-card *ngSwitchCase="'3'" header="GENERAR PDF">
+
+      </p-card>
+      <p-card *ngSwitchCase="'4'" header="GEO LOCALIZACIÓN">
+
+      </p-card>
+      <p-card *ngSwitchCase="'5'" header="USUARIOS">
+
+      </p-card>
+      <p-card *ngSwitchCase="'6'" header="CATALOGO DE COLORES">
+
+      </p-card>
+      <p-card *ngSwitchCase="'7'" header="CATALOGO DE COLORES">
+
+      </p-card>
+      <p-card *ngSwitchCase="'8'" header="CATALOGO DE FACHADAS">
+
+      </p-card>
+      <p-card *ngSwitchCase="'9'" header="CATALOGO DE REFERENCIAS">
+        <app-admin-catalogo-referencias></app-admin-catalogo-referencias>
+      </p-card>
     </div>
-    </section>
+  </section>
 </div>
