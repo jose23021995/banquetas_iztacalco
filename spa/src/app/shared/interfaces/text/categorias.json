@@ -1,0 +1,158 @@
+{
+  "tipo_inmueble":
+    {
+        "casa_habitación": [
+            { "id": "1", "name": "casa habitación", "category": "tipo_inmueble", "image": "casa_normal.jpg" },
+            { "id": "2", "name": "hay mas de una casa entre la banqueta", "category": "tipo_inmueble", "image": "casas.jpg" },
+            { "id": "3", "name": "departamentos", "category": "alrededores", "image": "departamentos.jpg" }
+        ],
+        "negocio": [
+            { "id": "1", "name": "micelanea", "category": "alrededores", "image": "arboles.jpg" },
+            { "id": "2", "name": "tiendita de abarrotes", "category": "alrededores", "image": "tiendita.jpg" },
+            { "id": "3", "name": "restaurante / cafeteria", "category": "alrededores", "image": "restaurante.jpg" },
+            { "id": "4", "name": "oficinas / locales", "category": "alrededores", "image": "oficinas.jpg" },
+            { "id": "5", "name": "mercado", "category": "alrededores", "image": "mercado.jpg" },
+            { "id": "6", "name": "taller mecánico / carpinteria", "category": "alrededores", "image": "taller.jpg" },
+            { "id": "7", "name": "puesto o puestos ambulantes", "category": "alrededores", "image": "ambulante.jpg" },
+            { "id": "8", "name": "centro comercial", "category": "alrededores", "image": "centro_comercial.jpg" },
+            { "id": "9", "name": "estetica", "category": "alrededores", "image": "centro_comercial.jpg" },
+            { "id": "10", "name": "gimnasio", "category": "alrededores", "image": "gimnasio.jpg" },
+            { "id": "11", "name": "cine", "category": "alrededores", "image": "cine.jpg" },
+            { "id": "12", "name": "departamentos", "category": "alrededores", "image": "departamentos.jpg" }
+        ],
+        "institución": [
+            { "id": "1", "name": "hospital / clínica", "category": "alrededores", "image": "arboles.jpg" },
+            { "id": "2", "name": "escuela", "category": "alrededores", "image": "escuela.jpg" },
+            { "id": "3", "name": "delegacion", "category": "alrededores", "image": "delegacion.jpg" },
+            { "id": "4", "name": "iglesia / templo", "category": "alrededores", "image": "iglesia.jpg" },
+            { "id": "5", "name": "biblioteca", "category": "alrededores", "image": "biblioteca.jpg" },
+            { "id": "6", "name": "teatro", "category": "alrededores", "image": "teatro.jpg" },
+            { "id": "7", "name": "museo", "category": "alrededores", "image": "museo.jpg" },
+            { "id": "8", "name": "panteon", "category": "alrededores", "image": "panteon.jpg" }
+        ],
+        "otros_espacios": [
+            { "id": "1", "name": "parque", "category": "alrededores", "image": "parque.jpg" },
+            { "id": "2", "name": "parque / bosque / espacio público", "category": "alrededores", "image": "parque.jpg" },
+            { "id": "3", "name": "llano", "category": "alrededores", "image": "llano.jpg" }
+        ]
+    },
+  "alrededores": [
+    { "id": "2", "name": "micelanea", "category": "alrededores", "image": "arboles.jpg" },
+    { "id": "2", "name": "hospital / clínica", "category": "alrededores", "image": "arboles.jpg" },
+    { "id": "3", "name": "parque", "category": "alrededores", "image": "parque.jpg" },
+    { "id": "4", "name": "escuela ", "category": "alrededores", "image": "escuela.jpg" },
+    { "id": "5", "name": "mercado", "category": "alrededores", "image": "mercado.jpg" },
+    { "id": "6", "name": "tiendita de abarrotes", "category": "alrededores", "image": "tiendita.jpg" },
+    { "id": "7", "name": "restaurante / cafeteria", "category": "alrededores", "image": "restaurante.jpg" },
+    { "id": "8", "name": "oficinas / locales", "category": "alrededores", "image": "oficinas.jpg" },
+    { "id": "9", "name": "departamentos", "category": "alrededores", "image": "departamentos.jpg" },
+    { "id": "10", "name": "iglesia / templo", "category": "alrededores", "image": "iglesia.jpg" },
+    { "id": "11", "name": "taller mecánico/ carpinteria", "category": "alrededores", "image": "taller.jpg" },
+    {"id": "12", "name": "parque/ bosque / espacio público", "category": "alrededores", "image": "parque.jpg"},
+    { "id": "13", "name": "delegacion", "category": "alrededores", "image": "delegacion.jpg" },
+    { "id": "15", "name": "llano", "category": "alrededores", "image": "llano.jpg"},
+    { "id": "16", "name": "puesto o puestos ambulantes", "category": "alrededores", "image": "ambulante.jpg" },
+    { "id": "16", "name": "panteon", "category": "alrededores", "image": "panteon.jpg" },
+    { "id": "16", "name": "centro comercial", "category": "alrededores", "image": "centro_comercial.jpg" },
+    { "id": "16", "name": "estetica", "category": "alrededores", "image": "centro_comercial.jpg" },
+    { "id": "16", "name": "gimnasio", "category": "alrededores", "image": "gimnasio.jpg" },
+    { "id": "16", "name": "cine", "category": "alrededores", "image": "cine.jpg" },
+    { "id": "16", "name": "biblioteca", "category": "alrededores", "image": "biblioteca.jpg" },
+    { "id": "16", "name": "teatro", "category": "alrededores", "image": "teatro.jpg" },
+    { "id": "16", "name": "museo", "category": "alrededores", "image": "museo.jpg" }
+  ],
+  "materiales":{
+    "piso": [
+    { "id": "1", "name": "Concreto Escobillado", "category": "piso", "image": "concreto-escobillado.jpg" },
+    { "id": "2", "name": "Concreto Estampado", "category": "piso", "image": "concreto-estampado.jpg" },
+    { "id": "3", "name": "Concreto Permeable", "category": "piso", "image": "concreto-permeable.jpg" },
+    { "id": "4", "name": "Adoquin de Concreto", "category": "piso", "image": "adoquin-concreto.png" },
+    { "id": "5", "name": "Adoquin Ceramico", "category": "piso", "image": "adoquin-ceramico.jpg" },
+    { "id": "6", "name": "Piedra Natural", "category": "piso", "image": "piedra-natural.jpg" },
+    { "id": "7", "name": "Laja de Piedra", "category": "piso", "image": "laja-piedra.jpg" },
+    { "id": "8", "name": "Loseta de Cemento", "category": "piso", "image": "loseta-cemento.jpg" },
+    { "id": "9", "name": "Baldosa de Terrazo", "category": "piso", "image": "baldosa-terrazo.jpg" },
+    { "id": "10", "name": "Asfalto", "category": "piso", "image": "asfalto.jpg" },
+    { "id": "11", "name": "Gravilla Estabilizada", "category": "piso", "image": "gravilla.jpg" },
+    { "id": "12", "name": "Pavimento Tactil", "category": "piso", "image": "pavimento-tactil.jpg" },
+    { "id": "13", "name": "Madera Deck", "category": "piso", "image": "madera-deck.jpg" }
+    ],
+    "colores": [
+        { "id": "1", "name": "negro", "category": "colores", "color": "#000000" },
+        { "id": "2", "name": "blanco", "category": "colores", "color": "#FFFFFF" },
+        { "id": "3", "name": "amarillo", "category": "colores", "color": "#FFD700" },
+        { "id": "4", "name": "amarillo oscuro", "category": "colores", "color": "#E99210" },
+        { "id": "5", "name": "naranja", "category": "colores", "color": "#F05423" },
+        { "id": "6", "name": "rojo", "category": "colores", "color": "#E41E26" },
+        { "id": "7", "name": "magenta", "category": "colores", "color": "#DA1E7E" },
+        { "id": "8", "name": "lila", "category": "colores", "color": "#9187C1" },
+        { "id": "9", "name": "violeta", "category": "colores", "color": "#5C337D" },
+        { "id": "10", "name": "cielo", "category": "colores", "color": "#009AD9" },
+        { "id": "11", "name": "azul", "category": "colores", "color": "#1B56AA" },
+        { "id": "12", "name": "turquesa", "category": "colores", "color": "#26B4C4" },
+        { "id": "13", "name": "manzana", "category": "colores", "color": "#8AC33E" },
+        { "id": "14", "name": "verde", "category": "colores", "color": "#008D36" },
+        { "id": "15", "name": "gris", "category": "colores", "color": "#A0A0A0" },
+        { "id": "2", "name": "sin color", "category": "colores", "color": "#FFFFFF" }
+
+    ],
+    "material_fachada": [
+        { "id": "1", "name": "pintada", "category": "fachada", "image": "pintura_morteros.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "2", "name": "ladrillo rojo", "category": "fachada", "image": "ladrillo_rojo.jpg" },
+        { "id": "3", "name": "Madera natural", "category": "fachada", "image": "madera_natural.jpg" },
+        { "id": "4", "name": "Madera pintada", "category": "fachada", "image": "madera_pintada.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "5", "name": "Cerámica y Porcelanato fachada", "category": "fachada", "image": "ceramica_y_porcelanato_fachada.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "6", "name": "Paneles Metálicos", "category": "fachada", "image": "paneles_metalicos.jpg" },
+        { "id": "7", "name": "vidrio", "category": "fachada", "image": "vidrio.jpg" },
+        { "id": "8", "name": "rejas", "category": "fachada", "image": "rejas.jpg" },
+        { "id": "9", "name": "barrotes", "category": "fachada", "image": "barrotes.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "10", "name": "grafitti", "category": "fachada", "image": "grafitti.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "11", "name": "franja de división", "category": "fachada", "image": "liston.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "12", "name": "azulejo", "category": "fachada", "image": "azulejos.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "13", "name": "grafiti", "category": "fachada", "image": "grafiti.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "14", "name": "paracaidistas", "category": "fachada", "image": "paracaidistas.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "15", "name": "obra negra / construccion", "category": "fachada", "image": "paracaidistas.jpg", "hasColor": true, "more_than_one_color": true },
+        { "id": "16", "name": "mas de una casa", "category": "fachada", "image": "mas.jpg" }
+
+    ],
+    "material_puerta": [
+        { "id": "1", "name": "madera de encino", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "2", "name": "madera de pino", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "3", "name": "caoba barnizada", "category": "puerta", "image": "", "hasColor": true, "more_than_one_color": true },
+        { "id": "4", "name": "nogal oscuro", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "5", "name": "aluminio blanco", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "6", "name": "aluminio negro mate", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "7", "name": "acero reforzado", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "8", "name": "hierro fundido", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "9", "name": "pvc imitación madera", "category": "puerta", "image": "", "hasColor": true, "more_than_one_color": true },
+        { "id": "10", "name": "vidrio translúcido", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "11", "name": "fibra de vidrio", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "12", "name": "chapa de acero", "category": "puerta", "image": "", "hasColor": true },
+        { "id": "13", "name": "multilaminado", "category": "puerta", "image": "", "hasColor": true, "more_than_one_color": true },
+        { "id": "14", "name": "puerta enrrollada para negocio", "category": "puerta", "image": "", "hasColor": true }
+    ],
+    "accesorios_de_banqueta":[
+        { "id": "1", "name": "árboles", "category": "alrededores", "image": "arboles.jpg" },
+        { "id": "2", "name": "arbustos", "category": "alrededores", "image": "arbustos.jpg" },
+        { "id": "3", "name": "tocon", "category": "alrededores", "image": "tocon.jpg" },
+        { "id": "1", "name": "coladera", "category": "alrededores", "image": "coladera.jpg" },
+        { "id": "3", "name": "poste", "category": "alrededores", "image": "poste.jpg" },
+        { "id": "4", "name": "banca", "category": "alrededores", "image": "banca.jpg" },
+        { "id": "5", "name": "papelera", "category": "alrededores", "image": "papelera.jpg" },
+        { "id": "6", "name": "señalamiento vial", "category": "alrededores", "image": "senalamiento_vial.jpg" },
+        { "id": "7", "name": "luminaria", "category": "alrededores", "image": "luminaria.jpg" },
+        { "id": "8", "name": "hidrante", "category": "alrededores", "image": "hidrante.jpg" },
+        { "id": "9", "name": "bici estacionamiento", "category": "alrededores", "image": "bici_estacionamiento.jpg" },
+        { "id": "10", "name": "señalamiento vial", "category": "alrededores", "image": "" },
+        { "id": "11", "name": "cascajo", "category": "alrededores", "image": "" },
+        { "id": "12", "name": "auto, moto abandonada", "category": "alrededores", "image": "" }
+    ],
+     "estatus_banqueta":[
+        { "id": "1", "name": "normal", "category": "alrededores", "image": "arboles.jpg" },
+        { "id": "2", "name": "cuarteadura", "category": "alrededores", "image": "arbustos.jpg" },
+        { "id": "3", "name": "destruida", "category": "alrededores", "image": "tocon.jpg" },
+        { "id": "4", "name": "levantada /destruida por arbol", "category": "alrededores", "image": "tocon.jpg" }
+     ]
+  }
+  
+}

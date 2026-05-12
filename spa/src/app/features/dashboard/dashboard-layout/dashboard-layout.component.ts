@@ -84,6 +84,12 @@ export class DashboardLayoutComponent {
                 icon: 'pi pi-palette',
                 routerLink: ['admin', 9]
             }
+            ,
+            {
+                label: 'llenado de referencias',
+                icon: 'pi pi-palette',
+                routerLink: ['admin', 10]
+            }
         ]
     });
 

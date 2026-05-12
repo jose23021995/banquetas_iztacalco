@@ -7,6 +7,8 @@ import {BannerInterface}  from '../../../shared/interfaces/models/banner.model';
 //componentes reutilizables
 import {UploadedImage} from '../../../shared/components/uploaded-image/uploaded-image';
 import {AdminCatalogoReferencias} from '../../../shared/components/admin-catalogo-referencias/admin-catalogo-referencias';
+import { AccordionModule } from 'primeng/accordion';
+import { ButtonModule } from 'primeng/button';
 const { banner }=texto;
 @Component({ 
   selector: 'app-admin', 
@@ -16,7 +18,9 @@ const { banner }=texto;
     CardModule, 
     HeadersComponent, 
     UploadedImage, // <--- AGREGA ESTO AQUÍ
-    AdminCatalogoReferencias
+    AdminCatalogoReferencias,
+    AccordionModule,
+    ButtonModule
   ], 
   templateUrl: './admin.component.html', 
   styleUrls: ['./admin.component.scss','./imagenes.scss','./referencias.scss' ]
@@ -33,6 +37,7 @@ export class AdminComponent implements OnInit {
   public img = signal("");
   public datosDeLaBanqueta: any;
 
+  public active: string = '0';
 
   ngOnInit(): void {
     this.requetsImagen();
