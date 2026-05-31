@@ -1,0 +1,23 @@
+<div [formGroup]="group" class="grid">
+  <input pInputText formControlName="direccion_calle_numero" placeholder="Calle y número" />
+  <input pInputText formControlName="latitud" placeholder="Latitud" />
+  <input pInputText formControlName="longitud" placeholder="Longitud" />
+
+  <p-select [options]="colonias" formControlName="id_colonia" placeholder="Colonia"></p-select>
+  <p-select [options]="secciones" formControlName="id_seccion" placeholder="Sección"></p-select>
+  <p-select [options]="claves" formControlName="id_clave" placeholder="Clave colonia"></p-select>
+
+ <p-button
+  label="Seleccionar GPS"
+  (onClick)="abrirModalGps()">
+</p-button>
+
+<app-step-modal-gps
+  [visible]="modalGpsVisible"
+  [latitud]="latitud"
+  [longitud]="longitud"
+  [direccion]="direccion"
+  (cerrar)="cerrarModalGps()"
+  (confirmar)="guardarGps($event)">
+</app-step-modal-gps>
+</div>

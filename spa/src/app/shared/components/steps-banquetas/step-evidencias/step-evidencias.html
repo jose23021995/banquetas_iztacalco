@@ -1,0 +1,11 @@
+<p-fileUpload
+  mode="advanced"
+  name="imagenes[]"
+  accept="image/*"
+  [multiple]="true"
+  [customUpload]="true"
+  chooseLabel="Seleccionar imágenes"
+  uploadLabel="Cargar"
+  cancelLabel="Cancelar"
+  (onSelect)="onSelect($event)">
+</p-fileUpload>

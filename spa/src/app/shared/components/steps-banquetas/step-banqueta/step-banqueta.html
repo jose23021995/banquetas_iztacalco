@@ -1,0 +1,17 @@
+<div [formGroup]="group" class="grid">
+  <p-select
+    [options]="estatusBanqueta" 
+    formControlName="estatus_banqueta" 
+    placeholder="Estatus de banqueta">
+  </p-select>
+
+  <p-inputNumber 
+    formControlName="ancho_banqueta" 
+    placeholder="Ancho de banqueta">
+  </p-inputNumber>
+
+  <p-inputNumber 
+    formControlName="largo_banqueta" 
+    placeholder="Largo de banqueta">
+  </p-inputNumber>
+</div>

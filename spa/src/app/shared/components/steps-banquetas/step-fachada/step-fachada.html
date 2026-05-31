@@ -1,0 +1,13 @@
+<div [formGroup]="group" class="grid">
+  <p-select
+    [options]="colores" 
+    formControlName="color_fachada_id" 
+    placeholder="Color fachada">
+  </p-select>
+
+  <p-select
+    [options]="materiales" 
+    formControlName="material_fachada_id" 
+    placeholder="Material fachada">
+  </p-select>
+</div>

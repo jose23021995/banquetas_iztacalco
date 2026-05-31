@@ -1,0 +1,61 @@
+<p-dialog
+  header="Ubicación GPS"
+  [modal]="true"
+  [visible]="visible"
+  [style]="{ width: '50rem' }"
+  (onShow)="inicializarMapa()"
+  (onHide)="onCerrar()">
+
+  <div class="modal-gps">
+
+    <div class="modal-gps__header">
+      <div>
+        <h3>Detector de posición actual</h3>
+        <p>Haz clic en el mapa para corregir la ubicación manualmente.</p>
+      </div>
+
+      <p-button
+        type="button"
+        label="Usar mi GPS"
+        icon="pi pi-map-marker"
+        [disabled]="cargando"
+        (onClick)="obtenerUbicacionGps()">
+      </p-button>
+    </div>
+
+    <div class="modal-gps__map-wrapper">
+      <div id="mapaGps" class="modal-gps__map"></div>
+
+      <div *ngIf="cargando" class="modal-gps__loading">
+        Buscando dirección del punto...
+      </div>
+
+      <div *ngIf="errorMsg" class="modal-gps__error">
+        {{ errorMsg }}
+      </div>
+    </div>
+
+    <div *ngIf="datosUbicacion" class="modal-gps__result">
+      <p><strong>Latitud:</strong> {{ datosUbicacion.latitud }}</p>
+      <p><strong>Longitud:</strong> {{ datosUbicacion.longitud }}</p>
+      <p><strong>Dirección:</strong> {{ datosUbicacion.direccion }}</p>
+    </div>
+
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Cancelar"
+      severity="secondary"
+      (onClick)="onCerrar()">
+    </p-button>
+
+    <p-button
+      label="Confirmar"
+      severity="success"
+      [disabled]="!latitud || !longitud"
+      (onClick)="onConfirmar()">
+    </p-button>
+  </ng-template>
+
+</p-dialog>

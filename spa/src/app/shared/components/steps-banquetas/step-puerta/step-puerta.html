@@ -1,0 +1,13 @@
+<div [formGroup]="group" class="grid">
+  <p-select
+    [options]="colores" 
+    formControlName="color_puerta_id" 
+    placeholder="Color puerta">
+  </p-select>
+
+  <p-select
+    [options]="materiales" 
+    formControlName="material_puerta_id" 
+    placeholder="Material puerta">
+  </p-select>
+</div>

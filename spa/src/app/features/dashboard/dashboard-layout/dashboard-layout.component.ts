@@ -90,6 +90,12 @@ export class DashboardLayoutComponent {
                 icon: 'pi pi-palette',
                 routerLink: ['admin', 10]
             }
+             ,
+            {
+                label: 'modal reutilizable',
+                icon: 'pi pi-palette',
+                routerLink: ['admin', 11]
+            }
         ]
     });
 
@@ -99,6 +105,12 @@ export class DashboardLayoutComponent {
       label: 'Prueba Interceptor', 
       icon: 'pi pi-exclamation-triangle', 
       command: () => this.pruebaInterceptor() 
+    });
+
+    menu.push({ 
+      label: 'Agregar banquetas', 
+      icon: 'pi pi-plus', 
+      routerLink: 'add-character'
     });
 
     return menu;

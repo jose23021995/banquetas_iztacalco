@@ -1,0 +1,54 @@
+<p-steps [model]="steps" [activeIndex]="stepActual"></p-steps>
+
+<section class="form-container">
+  @if (stepActual === 0) {
+    <app-step-contacto [group]="contactoGroup"></app-step-contacto>
+  }
+
+  @if (stepActual === 1) {
+    <app-step-ubicacion [group]="ubicacionGroup"></app-step-ubicacion>
+  }
+
+  @if (stepActual === 2) {
+    <app-step-banqueta [group]="banquetaGroup"></app-step-banqueta>
+  }
+
+  @if (stepActual === 3) {
+    <app-step-fachada [group]="fachadaGroup"></app-step-fachada>
+  }
+
+  @if (stepActual === 4) {
+    <app-step-puerta [group]="puertaGroup"></app-step-puerta>
+  }
+
+  @if (stepActual === 5) {
+    <app-step-referencias></app-step-referencias>
+  }
+  @if (stepActual === 6) {
+    <app-step-evidencias [group]="evidenciasGroup"></app-step-evidencias>
+  }
+</section>
+
+<div class="actions">
+  <p-button 
+    label="Anterior" 
+    severity="secondary"
+    [disabled]="stepActual === 0"
+    (onClick)="anterior()">
+  </p-button>
+
+  @if (stepActual < steps.length - 1) {
+    <p-button 
+      label="Siguiente" 
+      (onClick)="siguiente()">
+    </p-button>
+  }
+
+  @if (stepActual === steps.length - 1) {
+    <p-button 
+      label="Guardar registro" 
+      severity="success"
+      (onClick)="guardar()">
+    </p-button>
+  }
+</div>

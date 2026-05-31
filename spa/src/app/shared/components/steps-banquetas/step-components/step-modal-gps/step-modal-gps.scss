@@ -1,0 +1,67 @@
+.modal-gps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-gps__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+}
+
+.modal-gps__map-wrapper {
+  position: relative;
+}
+
+.modal-gps__map {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal-gps__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  z-index: 1000;
+}
+
+.modal-gps__error {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 0.75rem;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.modal-gps__result {
+  background: #111827;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+
+  p {
+    margin: 0.25rem 0;
+  }
+}

@@ -41,6 +41,12 @@ export const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'add-character',
+        canActivate: [adminGuard],
+        loadComponent: () => import('./features/dashboard/forms/add-banquetas/add-banquetas').then(m => m.AddBanquetas)
+        
+      },
 
       {
         path: '', 
