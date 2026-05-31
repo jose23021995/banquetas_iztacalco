@@ -35,6 +35,7 @@ export class StepModalGps implements AfterViewInit {
     latitud: string;
     longitud: string;
     direccion: string;
+    colonia: string;
   }>();
 
   map!: L.Map;
@@ -172,11 +173,13 @@ export class StepModalGps implements AfterViewInit {
         address.residential ||
         '';
 
-      const colonia =
+      const coloniaRaw =
         address.suburb ||
         address.neighbourhood ||
         address.city_district ||
         '';
+
+      const colonia = coloniaRaw.replace(/^(Colonia|colonia|COLONIA|Col\.|col\.)\s+/i, '').trim();
 
       this.colonia = colonia;
       console.log('Nombre de la colonia:', colonia);
@@ -207,7 +210,8 @@ export class StepModalGps implements AfterViewInit {
     this.confirmar.emit({
       latitud: this.latitud,
       longitud: this.longitud,
-      direccion: this.direccion
+      direccion: this.direccion,
+      colonia: this.colonia
     });
   }
 }

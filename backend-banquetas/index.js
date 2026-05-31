@@ -7,6 +7,7 @@ const multer = require('multer'); // Añadido para subida de archivos
 
 const catalogosRoutes = require('./routes/catalogos.routes');
 const authRoutes = require('./routes/auth.routes');
+const seccionesRoutes = require('./routes/secciones.routes');
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Rutas
 app.use('/api/catalogos', catalogosRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/secciones', seccionesRoutes);
 
 // --- RUTA PARA SUBIR IMÁGENES ---
 // 'foto' debe ser el mismo nombre que uses en el FormData de Angular
