@@ -53,7 +53,7 @@
     <p-button
       label="Confirmar"
       severity="success"
-      [disabled]="!latitud || !longitud"
+      [disabled]="cargando || !latitud || !longitud"
       (onClick)="onConfirmar()">
     </p-button>
   </ng-template>

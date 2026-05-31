@@ -39,16 +39,7 @@ export class StepUbicacionComponent implements OnInit {
   colonias: Array<{ label: string; value: number }> = [];
   secciones: Array<{ label: string; value: number }> = [];
 
-  claves = [
-    {
-      label: 'CLV-001',
-      value: 1
-    },
-    {
-      label: 'CLV-002',
-      value: 2
-    }
-  ];
+  
 
   ngOnInit(): void {
     this.cargarColonias();

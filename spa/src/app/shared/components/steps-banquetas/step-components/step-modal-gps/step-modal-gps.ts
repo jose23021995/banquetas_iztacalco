@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
-
+import { ChangeDetectorRef } from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
@@ -54,7 +54,7 @@ export class StepModalGps implements AfterViewInit {
   } | null = null;
 
   centroInicial: L.LatLngExpression = [19.4326, -99.1332];
-
+  constructor(private cdr: ChangeDetectorRef) {}
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.inicializarMapa();
@@ -85,38 +85,39 @@ export class StepModalGps implements AfterViewInit {
   }
 
   async obtenerUbicacionGps(): Promise<void> {
-    if (!navigator.geolocation) {
-      this.errorMsg = 'Tu navegador no soporta geolocalización.';
-      return;
-    }
-
-    this.cargando = true;
-    this.errorMsg = '';
-
-    navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
-
-        await this.seleccionarCoordenadas(lat, lng);
-
-        this.cargando = false;
-      },
-      () => {
-        this.errorMsg = 'Permiso de ubicación denegado o señal GPS débil.';
-        this.cargando = false;
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 12000,
-        maximumAge: 0
-      }
-    );
+  if (!navigator.geolocation) {
+    this.errorMsg = 'Tu navegador no soporta geolocalización.';
+    return;
   }
 
-  async seleccionarCoordenadas(lat: number, lng: number): Promise<void> {
-    this.cargando = true;
+  this.errorMsg = '';
 
+  navigator.geolocation.getCurrentPosition(
+    async (position) => {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+
+      await this.seleccionarCoordenadas(lat, lng);
+    },
+    () => {
+      this.errorMsg = 'Permiso de ubicación denegado o señal GPS débil.';
+      this.cargando = false;
+      this.cdr.detectChanges();
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 12000,
+      maximumAge: 0
+    }
+  );
+}
+
+  async seleccionarCoordenadas(lat: number, lng: number): Promise<void> {
+  this.cargando = true;
+  this.errorMsg = '';
+  this.cdr.detectChanges();
+
+  try {
     this.latitud = String(lat);
     this.longitud = String(lng);
 
@@ -132,9 +133,11 @@ export class StepModalGps implements AfterViewInit {
       direccion: this.direccion,
       colonia: this.colonia
     };
-
-    this.cargando = false;
-  }
+  } finally {
+  this.cargando = false;
+  this.cdr.detectChanges();
+}
+}
 
   actualizarMarcador(lat: number, lng: number): void {
     const posicion: L.LatLngExpression = [lat, lng];
@@ -153,54 +156,52 @@ export class StepModalGps implements AfterViewInit {
   }
 
   async consultarDireccion(lat: number, lng: number): Promise<string> {
-    try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`,
-        {
-          headers: {
-            'Accept-Language': 'es'
-          }
-        }
-      );
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
 
-      const data = await response.json();
-
-      const address = data.address || {};
-
-      const calle =
-        address.road ||
-        address.pedestrian ||
-        address.residential ||
-        '';
-
-      const coloniaRaw =
-        address.suburb ||
-        address.neighbourhood ||
-        address.city_district ||
-        '';
-
-      const colonia = coloniaRaw.replace(/^(Colonia|colonia|COLONIA|Col\.|col\.)\s+/i, '').trim();
-
-      this.colonia = colonia;
-      console.log('Nombre de la colonia:', colonia);
-
-      if (calle && colonia) {
-        return `${calle}, ${colonia}`;
+  try {
+    const response = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`,
+      {
+        headers: {
+          'Accept-Language': 'es'
+        },
+        signal: controller.signal
       }
+    );
 
-      if (calle) {
-        return calle;
-      }
+    const data = await response.json();
+    const address = data.address || {};
 
-      if (colonia) {
-        return colonia;
-      }
+    const calle =
+      address.road ||
+      address.pedestrian ||
+      address.residential ||
+      '';
 
-      return data.display_name || `Punto en mapa (${lat.toFixed(4)}, ${lng.toFixed(4)})`;
-    } catch {
-      return `Punto en mapa (${lat.toFixed(4)}, ${lng.toFixed(4)})`;
-    }
+    const coloniaRaw =
+      address.suburb ||
+      address.neighbourhood ||
+      address.city_district ||
+      '';
+
+    const colonia = coloniaRaw
+      .replace(/^(Colonia|colonia|COLONIA|Col\.|col\.)\s+/i, '')
+      .trim();
+
+    this.colonia = colonia;
+
+    if (calle && colonia) return `${calle}, ${colonia}`;
+    if (calle) return calle;
+    if (colonia) return colonia;
+
+    return data.display_name || `Punto en mapa (${lat.toFixed(4)}, ${lng.toFixed(4)})`;
+  } catch {
+    return `Punto en mapa (${lat.toFixed(4)}, ${lng.toFixed(4)})`;
+  } finally {
+    clearTimeout(timeout);
   }
+}
 
   onCerrar(): void {
     this.cerrar.emit();
